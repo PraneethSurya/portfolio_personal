@@ -25,6 +25,26 @@
 
 
 <style>
+.profile-pic {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically, if needed */
+    overflow: hidden; /* Ensure the rounded corners apply correctly */
+}
+
+.rounded-profile {
+    width: 100%; /* Responsive width */
+    max-width: 150px; /* Optional: Set a maximum size for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Fully round corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a polished look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects on hover */
+}
+
+.rounded-profile:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
 
 /*======================================
 //--//-->   ABOUT
@@ -222,9 +242,10 @@
 							<div class="overlay">
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
-									  <div class="profile-pic.png">
-										<img src="image/Profile Image_1.png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
+									 <div class="profile-pic">
+										    <img src="image/Profile Image_1.png" class="img-fluid rounded-profile" alt="Profile Image">
+										</div>
+
 									</div>
 									<!-- Details next to profile image -->
 									<div class="col-sm-6 col-md-7">
