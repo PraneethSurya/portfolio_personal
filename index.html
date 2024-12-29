@@ -31,9 +31,9 @@
     flex-wrap: wrap; /* Wrap for small screens */
     align-items: center; /* Vertically center */
     justify-content: center; /* Center content */
-    gap: 20px; /* Spacing between image and text */
+    gap: 15px; /* Reduce spacing between image and text */
     background-color: #121212; /* Dark background for contrast */
-    padding: 20px; /* Add padding */
+    padding: 15px; /* Reduced padding to minimize card edge gaps */
     border-radius: 10px; /* Slight rounded corners for container */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
     max-width: 800px; /* Restrict the width for larger screens */
@@ -45,11 +45,11 @@
 /* Profile Picture Styles */
 .profile-pic {
     flex-shrink: 0; /* Prevent image from shrinking */
-    width: 150px; /* Fixed size for the image */
-    height: 150px; /* Make the image square */
+    width: 120px; /* Reduced image size for compactness */
+    height: 120px; /* Make the image square */
     overflow: hidden; /* Crop any overflow */
     border-radius: 50%; /* Perfectly round image */
-    border: 5px solid #007bff; /* Blue border for styling */
+    border: 4px solid #007bff; /* Slim blue border for styling */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
 }
 
@@ -64,15 +64,18 @@
 .profile-details {
     flex-grow: 1; /* Allow details to expand */
     text-align: left; /* Align text to the left */
+    padding: 10px; /* Add a little inner padding */
 }
 
 .profile-details p {
-    margin: 5px 0; /* Small spacing between lines */
-    line-height: 1.6; /* Improve readability */
+    margin: 4px 0; /* Minimal spacing between lines */
+    line-height: 1.4; /* Compact line spacing for better fit */
+    font-size: 16px; /* Slightly smaller text for compact look */
 }
 
 .profile-details strong {
     color: #00d1ff; /* Highlighted text color */
+    font-weight: 600; /* Medium weight for better readability */
 }
 
 /* Responsive Adjustments */
@@ -80,20 +83,26 @@
     .profile-container {
         flex-direction: column; /* Stack image and text */
         text-align: center; /* Center text on smaller screens */
-        width: 90%; /* Extend card width for mobile */
+        width: 95%; /* Extend card width for mobile */
         max-width: none; /* Remove restriction */
         margin: 0 auto; /* Ensure centering */
-    }
-
-    .profile-details p {
-        font-size: 14px; /* Reduce font size for smaller screens */
+        padding: 12px; /* Slightly adjust padding */
     }
 
     .profile-pic {
-        width: 200px; /* Slightly larger image on mobile for better appearance */
-        height: 200px; /* Ensure it's still square */
+        width: 150px; /* Slightly larger image on mobile for better appearance */
+        height: 150px; /* Ensure it's still square */
+    }
+
+    .profile-details p {
+        font-size: 14px; /* Smaller font size for better fit on small screens */
+    }
+
+    .profile-details {
+        padding: 5px; /* Reduce padding inside text area for compactness */
     }
 }
+
 
 
 
