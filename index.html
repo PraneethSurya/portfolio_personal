@@ -25,26 +25,68 @@
 
 
 <style>
-.profile-pic {
+/* Container for Profile Section */
+.profile-container {
     display: flex;
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically, if needed */
-    overflow: hidden; /* Ensure the rounded corners apply correctly */
+    flex-wrap: wrap; /* Wrap for small screens */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Center content */
+    gap: 20px; /* Spacing between image and text */
+    background-color: #121212; /* Dark background for contrast */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Slight rounded corners for container */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    max-width: 800px; /* Restrict the width for readability */
+    margin: 0 auto; /* Center the section on the page */
+    color: #fff; /* Text color */
+    font-family: 'Arial', sans-serif; /* Clean font */
 }
 
+/* Profile Picture Styles */
+.profile-pic {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 150px; /* Fixed size for the image */
+    height: 150px; /* Make the image square */
+    overflow: hidden; /* Crop any overflow */
+    border-radius: 50%; /* Perfectly round image */
+    border: 5px solid #007bff; /* Blue border for styling */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+}
+
+/* Image inside the circle */
 .rounded-profile {
-    width: 100%; /* Responsive width */
-    max-width: 150px; /* Optional: Set a maximum size for larger screens */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Fully round corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a polished look */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects on hover */
+    width: 100%; /* Responsive fit */
+    height: 100%; /* Ensure it covers the container */
+    object-fit: cover; /* Crop while maintaining aspect ratio */
 }
 
-.rounded-profile:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+/* Profile Details Section */
+.profile-details {
+    flex-grow: 1; /* Allow details to expand */
+    text-align: left; /* Align text to the left */
 }
+
+.profile-details p {
+    margin: 5px 0; /* Small spacing between lines */
+    line-height: 1.6; /* Improve readability */
+}
+
+.profile-details strong {
+    color: #00d1ff; /* Highlighted text color */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .profile-container {
+        flex-direction: column; /* Stack image and text */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .profile-details p {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+}
+
 
 /*======================================
 //--//-->   ABOUT
@@ -248,14 +290,26 @@
 
 									</div>
 									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
+<!-- 									<div class="col-sm-6 col-md-7">
 									  <div class="about-info">
 										<p><span class="title-s">Name: </span> <span>Praneeth Manisurya . P</span></p>
 										<p><span class="title-s">Desired Job Role : </span> <span>Data Analyst</span></p>
-										<!-- <p><span class="title-s">Experience: </span> <span>4+ Years</span></p> -->
 										<p><span class="title-s">Location: </span> <span>Bangalore<br>(Open to Relocate)</span><br></span></p>
 									  </div>
+									</div> -->
+
+									<div class="profile-container">
+									    <div class="profile-pic">
+									        <img src="image/Profile Image_1.png" class="img-fluid rounded-profile" alt="Profile Image">
+									    </div>
+									    <div class="profile-details">
+									        <p><strong>Name:</strong> Praneeth Manisurya P</p>
+									        <p><strong>Desired Job Role:</strong> Data Analyst</p>
+									        <p><strong>Location:</strong> Bangalore <br>(Open to Relocate)</p>
+									       
+									    </div>
 									</div>
+
 								  </div>
 
 								<div class="skill-mf pt-2">
