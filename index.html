@@ -245,31 +245,44 @@
 						// Initialize the typing animation
 						const typingAnimationElement = document.getElementById('typing-animation');
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Aspiring Data Analyst',
-						
-						];
+// Create an array of roles (without "Aspiring")
+const roles = [
+    'Data Analyst',
+    'Financial Analyst',
+    'Healthcare Business Analyst',
+    'Retail Analyst',
+    'Marketing Analyst',
+    'Supply Chain Analyst',
+    'Operations Analyst',
+    'Customer Experience Analyst',
+    'HR Analyst'
+];
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 150); // Increase the delay to slow down the typing animation
-						}
-
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
-
+								// Create a function to display the typing animation for a given role
+								function playTypingAnimation(role) {
+								    // Clear the text content before starting the animation
+								    typingAnimationElement.textContent = '';
+								
+								    // Combine "Aspiring" with the role
+								    const text = `Aspiring ${role}`;
+								
+								    // Loop through each character and add it to the element
+								    for (let i = 0; i < text.length; i++) {
+								        setTimeout(() => {
+								            typingAnimationElement.textContent += text[i];
+								        }, i * 150); // Adjust delay for typing speed
+								    }
+								
+								    // Once the animation is complete, reset the text and start over
+								    setTimeout(() => {
+								        // Move to the next role in the array
+								        const nextIndex = (roles.indexOf(role) + 1) % roles.length;
+								        playTypingAnimation(roles[nextIndex]);
+								    }, text.length * 150 + 1000); // Wait for the text to finish before switching
+								}
+								
+								// Start the typing animation loop with the first role
+								playTypingAnimation(roles[0]);
 						</script>
 
 						<br>
